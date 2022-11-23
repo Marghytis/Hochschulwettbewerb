@@ -1,0 +1,47 @@
+{"frames": {
+
+"H3-0.png":
+{
+	"frame": {"x":0,"y":0,"w":56,"h":48},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":56,"h":48},
+	"sourceSize": {"w":56,"h":48}
+},
+"H3-1.png":
+{
+	"frame": {"x":0,"y":48,"w":56,"h":48},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":56,"h":48},
+	"sourceSize": {"w":56,"h":48}
+},
+"Neutron.png":
+{
+	"frame": {"x":0,"y":96,"w":25,"h":25},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":25,"h":25},
+	"sourceSize": {"w":25,"h":25}
+},
+"Proton.png":
+{
+	"frame": {"x":25,"y":96,"w":24,"h":25},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":24,"h":25},
+	"sourceSize": {"w":24,"h":25}
+}},
+"animations": {
+	"H3": ["H3-0.png","H3-1.png"]
+},
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "Spritesheet.png",
+	"format": "RGBA8888",
+	"size": {"w":56,"h":121},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:713bc007b7a903f5cf46cef8aacfb0d5:27b94a885e296f1f199d966a06dafaf1:375f641a471db0aae0662f7697f3de0e$"
+}
+}
