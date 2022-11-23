@@ -3,8 +3,27 @@ const path = require('path');
 const CopyPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
+const networkInterfaces = require('os').networkInterfaces
 
-module.exports = (env, argv) => {
+module.exports = async (env, argv) => {
+
+    const local_ip = Object.values(networkInterfaces()).flat().find((i) => i?.family === 'IPv4' && !i?.internal)?.address;
+
+    let used_ip = local_ip;
+
+    if(argv.mode == "production") {
+        var http = require('http');
+
+        var public_ip = await new Promise(function(resolve, reject) {
+            http.get({'host': 'api.ipify.org', 'port': 80, 'path': '?format=json'}, function(resp) {
+                resp.on('data', function(ip) {
+                    resolve(JSON.parse(ip).ip);
+                });
+            });
+        });
+        console.log(public_ip);
+    }
+
     return ({
         stats: 'minimal', // Keep console output easy to read.
         entry: './src/index.ts', // Your program entry point
@@ -27,7 +46,7 @@ module.exports = (env, argv) => {
                 },
                 progress: true,
             },
-            port: 1234, host: '192.168.178.96'
+            port: 1234, host: used_ip
         },
 
         // Web games are bigger than pages, disable the warnings that our game is too big.
