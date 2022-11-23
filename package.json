@@ -4,6 +4,7 @@
     "start": "webpack serve --mode=development",
     "build": "run-s clean build-only",
     "build-only": "webpack --mode=production",
+    "start-production": "webpack serve --mode=production",
     "clean": "rimraf dist"
   },
   "dependencies": {
