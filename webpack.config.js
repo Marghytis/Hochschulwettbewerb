@@ -12,7 +12,7 @@ module.exports = async (env, argv) => {
     let used_ip = local_ip;
 
     if(argv.mode == "production") {
-        used_ip = "https://hochschulwettbewerb.onrender.com";
+        used_ip = "hochschulwettbewerb.onrender.com";
         // var http = require('http');
 
         // var used_ip = await new Promise(function(resolve, reject) {
