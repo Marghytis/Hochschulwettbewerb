@@ -12,16 +12,17 @@ module.exports = async (env, argv) => {
     let used_ip = local_ip;
 
     if(argv.mode == "production") {
-        var http = require('http');
+        used_ip = "3.125.183.140";
+        // var http = require('http');
 
-        var public_ip = await new Promise(function(resolve, reject) {
-            http.get({'host': 'api.ipify.org', 'port': 80, 'path': '?format=json'}, function(resp) {
-                resp.on('data', function(ip) {
-                    resolve(JSON.parse(ip).ip);
-                });
-            });
-        });
-        console.log(public_ip);
+        // var used_ip = await new Promise(function(resolve, reject) {
+        //     http.get({'host': 'api.ipify.org', 'port': 80, 'path': '?format=json'}, function(resp) {
+        //         resp.on('data', function(ip) {
+        //             resolve(JSON.parse(ip).ip);
+        //         });
+        //     });
+        // });
+        // console.log(used_ip);
     }
 
     return ({
